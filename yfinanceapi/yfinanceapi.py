@@ -102,8 +102,8 @@ def get_historical_prices(symbol, start_date, end_date):
           'c=%s&' % str(int(start_date[0:4])) + \
           'ignore=.csv'
     days = urllib.urlopen(url).readlines()
-    data = [day[:-2].split(',') for day in days]
-    return data 
+    stock_data = [day[:-2].split(',') for day in days]
+    return stock_data 
 
 #=========================================================================
 #                   Individual Data Mining Functions
@@ -121,20 +121,21 @@ def get_symbol(symbol):
 
 def get_name(symbol):
     """
-    Returns: A one-dimensional list containing the string representation
-    of the name for a given security.
+    Returns: A string of the name of a given security.
     """
     return __fetch(symbol, 'n')
 
 
 def get_ask(symbol):
     """
+    Returns: The ask price of a given security in real-time.
     """
     return __fetch(symbol, 'a')
 
 
 def get_bid(symbol):
     """
+    Returns: The bid price of a given security in real-time.
     """
     return __fetch(symbol, 'b')
 
@@ -148,108 +149,162 @@ def get_open(symbol):
     
 
 def get_prev_close(symbol):
+    """
+    """
     return __fetch(symbol, 'p')
 
 
 def get_price(symbol): 
+    """
+    """
     return __fetch(symbol, 'l1')
 
 
 def get_change(symbol):
+    """
+    """
     return __fetch(symbol, 'c1')
     
     
-def get_volume(symbol): 
+def get_volume(symbol):
+    """
+    """
     return __fetch(symbol, 'v')
 
 
-def get_avg_daily_volume(symbol): 
+def get_avg_daily_volume(symbol):
+    """
+    """
     return __fetch(symbol, 'a2')
     
 
 def get_after_hours_change(symbol):
+    """
+    """
     return __fetch(symbol, 'c8')
 
 
 def get_trade_date(symbol):
+    """
+    """
     return __fetch(symbol, 'd2')
 
 
 def get_float_shares(symbol):
+    """
+    """
     return __fetch(symbol, 'f6')
 
 
 def get_annualized_gain(symbol):
+    """
+    """
     return __fetch(symbol, 'g3')
 
 
 def get_holdings_gain(symbol):
+        """
+    """
     return __fetch(symbol, 'g6')
 
 
 def get_days_value_change(symbol):
+    """
+    """
     return __fetch(symbol, 'w4')
 
 
-def get_stock_exchange(symbol): 
+def get_stock_exchange(symbol):
+    """
+    """ 
     return __fetch(symbol, 'x')
     
     
 def get_market_cap(symbol):
+    """
+    """
     return __fetch(symbol, 'j1')
    
    
 def get_book_value(symbol):
+    """
+    """
     return __fetch(symbol, 'b4')
 
 
-def get_ebitda(symbol): 
+def get_ebitda(symbol):
+    """
+    """ 
     return __fetch(symbol, 'j4')
     
     
 def get_dividend_per_share(symbol):
+    """
+    """
     return __fetch(symbol, 'd')
 
 
-def get_dividend_yield(symbol): 
+def get_dividend_yield(symbol):
+    """
+    """ 
     return __fetch(symbol, 'y')
     
     
-def get_earnings_per_share(symbol): 
+def get_earnings_per_share(symbol):
+    """
+    """ 
     return __fetch(symbol, 'e')
 
 
-def get_52_week_high(symbol): 
+def get_52_week_high(symbol):
+    """
+    """ 
     return __fetch(symbol, 'k')
     
     
-def get_52_week_low(symbol): 
+def get_52_week_low(symbol):
+    """
+    """ 
     return __fetch(symbol, 'j')
 
 
-def get_50day_moving_avg(symbol): 
+def get_50day_moving_avg(symbol):
+    """
+    """ 
     return __fetch(symbol, 'm3')
     
     
-def get_200day_moving_avg(symbol): 
+def get_200day_moving_avg(symbol):
+    """
+    """ 
     return __fetch(symbol, 'm4')
     
     
-def get_price_earnings_ratio(symbol): 
+def get_price_earnings_ratio(symbol):
+    """
+    """ 
     return __fetch(symbol, 'r')
 
 
-def get_price_earnings_growth_ratio(symbol): 
+def get_price_earnings_growth_ratio(symbol):
+    """
+    """ 
     return __fetch(symbol, 'r5')
 
 
-def get_price_sales_ratio(symbol): 
+def get_price_sales_ratio(symbol):
+    """
+    """ 
     return __fetch(symbol, 'p5')
     
     
-def get_price_book_ratio(symbol): 
+def get_price_book_ratio(symbol):
+    """
+    """ 
     return __fetch(symbol, 'p6')
        
        
-def get_short_ratio(symbol): 
+def get_short_ratio(symbol):
+    """
+    """ 
     return __fetch(symbol, 's7')
