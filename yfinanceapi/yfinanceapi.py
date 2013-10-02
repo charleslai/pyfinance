@@ -8,7 +8,7 @@ import urllib
 yfinanceapi.py
 ==============
 
-The following is a module containing a Python API into Yahoo Finance RESTful
+The following is a module containing a Python API wrapper into Yahoo Finance RESTful
 API for getting stock ticker information in CSV format. It includes an umbrella
 function call that returns a hash table of various relevant stock information
 as well as individual methods that return a single integer or string of relevant
@@ -127,6 +127,18 @@ def get_name(symbol):
     return __fetch(symbol, 'n')
 
 
+def get_ask(symbol):
+    """
+    """
+    return __fetch(symbol, 'a')
+
+
+def get_bid(symbol):
+    """
+    """
+    return __fetch(symbol, 'b')
+
+
 def get_open(symbol):
     """
     Returns: A one-dimensional list containing the string representation
@@ -137,6 +149,7 @@ def get_open(symbol):
 
 def get_prev_close(symbol):
     return __fetch(symbol, 'p')
+
 
 def get_price(symbol): 
     return __fetch(symbol, 'l1')
@@ -153,7 +166,31 @@ def get_volume(symbol):
 def get_avg_daily_volume(symbol): 
     return __fetch(symbol, 'a2')
     
-    
+
+def get_after_hours_change(symbol):
+    return __fetch(symbol, 'c8')
+
+
+def get_trade_date(symbol):
+    return __fetch(symbol, 'd2')
+
+
+def get_float_shares(symbol):
+    return __fetch(symbol, 'f6')
+
+
+def get_annualized_gain(symbol):
+    return __fetch(symbol, 'g3')
+
+
+def get_holdings_gain(symbol):
+    return __fetch(symbol, 'g6')
+
+
+def get_days_value_change(symbol):
+    return __fetch(symbol, 'w4')
+
+
 def get_stock_exchange(symbol): 
     return __fetch(symbol, 'x')
     
