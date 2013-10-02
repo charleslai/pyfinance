@@ -51,7 +51,11 @@ def get_all(symbol):
     Gets commonly used data for a specific security and places it into a
     hash table of values. Look up keys are strings such as 'symbol', 'name'
     or 'dividend_yield'. A full list of fetched information can be gleaned
-    from the following source code. 
+    from the following source code.
+
+    The string passed into the HTTP request are symbols used in Yahoo's
+    RESTful API for financial data and map to specific values. These are
+    extracted into the stock_data hash table. 
     """
     values = __fetch(symbol, 'snxopl1c1ghva2j1dyjkm3m4erj4').split(',')
     stock_data = {}
