@@ -203,7 +203,7 @@ def get_annualized_gain(symbol):
 
 
 def get_holdings_gain(symbol):
-        """
+    """
     """
     return __fetch(symbol, 'g6')
 
